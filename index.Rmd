@@ -11,4 +11,4 @@ output:
 
 ## Project thoughts
 
-I am interested in somehow exploring the idea of political polarization in the United States and its connections to the news media, especially broadcast journalism. 
+I am interested in somehow exploring the idea of political polarization in the United States and its connections to the news media, especially broadcast journalism. I think it could be possible to study what people self-report as their main media sources are and see if there is a correlation to their party affiliation or even self-reported candidate preferences or opinions on current events (the existence of climate change, the degree to which polarization or elitist are prevalent issues, etc.). Aside from the more obvious question of what news networks promote certain ideologies, it would also be interesting to study how differences in the medium of news consumption --print versus broadcast versus social media, for example-- impacts peoples' perspectives, if at all. 
