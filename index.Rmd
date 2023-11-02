@@ -19,3 +19,19 @@ I will be using the Fox News rollout data set for my project in order to investi
 
 My hypothesis is that one's broadcast news source is highly influential on their political opinions. This hypothesis comes from my personal experiences interning on Capitol Hill, where constituents who would call into our office would often cite commentators on partisan broadcast news networks such as FOX or MSNBC as the evidence and fuel for their opinions on different legislative matters and political candidates. Especially in the United States' current extremely partisan broadcast media landscape, I think that Americans' views on political issues are highly dependent on their news sources. This hypothesis would be proven through this analysis by a high correlation between cities' proportion of Fox News subscribers and GOP vote share, and strengthened if that correlation is even higher than the correlation between GOP vote share and other demographic variables such as the share of Black/Hispanic population or the median income. If the correlation between the proportion of Fox News subscribers and the share of GOP votes is extremely low, or if racial demographics and/or income levels of various communities have a higher correlation with GOP votes compared to Fox News subscribers, this would disprove my hypothesis. 
 
+## One Data Visualization - Milestone 3
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+
+fox_news <- read_csv("foxnews (1).csv")
+
+ggplot(data = fox_news,
+       mapping = aes(x = subrf2000,
+                     y = gopvoteshare2000)) +
+  geom_point() + geom_smooth()
+```
+This data visualization is interesting precisely because it is not indicative of the trend that I expected. I anticipated a clear relationship between the percentage of Fox News subscribers and GOP vote share in a community in the year 2000, whereas this scatter plot shows that there is not really a relationship between the two. I am particularly intrigued by all of the vertical lines of points that I see in the graph -- I think that many communities have the exact same percentage of FOX news subscribers, perhaps because of some sort of anti-monopoly law. Regardless, this first data visualization proves the need for further investigation to see if there is a stronger relationship between GOP vote share and other demographic characteristics of a community. 
+
