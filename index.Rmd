@@ -28,10 +28,24 @@ library(dplyr)
 
 fox_news <- read_csv("foxnews (1).csv")
 
-ggplot(data = fox_news,
+subscribers_GOP <- ggplot(data = fox_news,
        mapping = aes(x = subrf2000,
                      y = gopvoteshare2000)) +
   geom_point() + geom_smooth()
+
+subscribers_GOP
 ```
+
 This data visualization is interesting precisely because it is not indicative of the trend that I expected. I anticipated a clear relationship between the percentage of Fox News subscribers and GOP vote share in a community in the year 2000, whereas this scatter plot shows that there is not really a relationship between the two. I am particularly intrigued by all of the vertical lines of points that I see in the graph -- I think that many communities have the exact same percentage of FOX news subscribers, perhaps because of some sort of anti-monopoly law. Regardless, this first data visualization proves the need for further investigation to see if there is a stronger relationship between GOP vote share and other demographic characteristics of a community. 
 
+# One Analysis - Milestone 4
+
+```{r}
+black_GOP <- ggplot(data = fox_news,
+       mapping = aes(x = black1990,
+                     y = gopvoteshare2000)) +
+  geom_point() + geom_smooth()
+
+black_GOP
+```
+This second data visualization shows a clear negative correlation between the share of black residents in a town in 1990 and the share of votes in the 2000 Presidential election that went to Republicans. This is in stark contrast to the previous data visualization, which hardly showed a correlation between the percentage of people subscribed to Fox News in a town with their geographic vote share. This goes against my hypothesis that the more FOX News subscriber a town has, the more likely they are to vote Republican. This is likely because many families are subscribed to packages of TV News channels that include Fox News, regardless of their consumption of the news source. If there was a variable that measured consumption instead of subscriptions, this would likely allow this analysis to be more precise and perhaps then show a relationship between media sources and Presidential election results. 
