@@ -1,0 +1,15 @@
+body {
+  background-color: pink; /* Change the background color */
+}
+
+.navbar {
+  background-color: darkpink; /* Change the navigation bar color */
+}
+
+h1, h2, h3 {
+  color: deeppink; /* Change heading colors */
+}
+
+a {
+  color: hotpink; /* Change hyperlink colors */
+}
