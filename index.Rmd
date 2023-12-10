@@ -38,7 +38,7 @@ subrf2000_histogram <- ggplot(data = fox_news,
   geom_histogram() + labs(
     x = "Percentage of Residents Who Are Subscribed to Fox News",
     y = "Count",
-    title = "Distribution of the Percentage of Residents Who Are Subscribed to Fox News"
+    title = "Distribution of the Percentage of Residents \nWho Are Subscribed to Fox News"
   )
 
 subrf2000_histogram
