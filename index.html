@@ -1542,7 +1542,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_histogram.html'>geom_histogram</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span></span>
 <span>    x <span class='op'>=</span> <span class='st'>"Percentage of Residents Who Are Subscribed to Fox News"</span>,</span>
 <span>    y <span class='op'>=</span> <span class='st'>"Count"</span>,</span>
-<span>    title <span class='op'>=</span> <span class='st'>"Distribution of the Percentage of Residents \nWho Are Subscribed to Fox News"</span></span>
+<span>    title <span class='op'>=</span> <span class='st'>"Distribution of the Percentage of Residents</span></span>
+<span><span class='st'>    \nWho Are Subscribed to Fox News"</span></span>
 <span>  <span class='op'>)</span></span>
 <span></span>
 <span><span class='va'>subrf2000_histogram</span></span></code></pre>
@@ -1559,7 +1560,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_histogram.html'>geom_histogram</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span></span>
 <span>    x <span class='op'>=</span> <span class='st'>"Percentage of Residents Who Are Subscribed to Fox News"</span>,</span>
 <span>    y <span class='op'>=</span> <span class='st'>"Count"</span>,</span>
-<span>    title <span class='op'>=</span> <span class='st'>"Distribution of the Percentage of Residents Who Are \nSubscribed to Fox News Excluding Zero"</span></span>
+<span>    title <span class='op'>=</span> <span class='st'>"Distribution of the Percentage of Residents Who Are</span></span>
+<span><span class='st'>    \nSubscribed to Fox News Excluding Zero"</span></span>
 <span>  <span class='op'>)</span></span>
 <span></span>
 <span><span class='va'>subrf2000_histogram_filtered</span></span></code></pre>
@@ -1574,7 +1576,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span>    SD <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/sd.html'>sd</a></span><span class='op'>(</span><span class='va'>subrf2000</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
 <span>  <span class='op'>)</span></span>
 <span></span>
-<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>filtered_data_distribution</span>, col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Mean"</span>, <span class='st'>"Standard Deviation"</span><span class='op'>)</span>, digits <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span></span></code></pre>
+<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>filtered_data_distribution</span>,</span>
+<span>             col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Mean"</span>, <span class='st'>"Standard Deviation"</span><span class='op'>)</span>,</span>
+<span>             digits <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span></span></code></pre>
 </div>
 <table>
 <thead>
@@ -1624,7 +1628,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span></span>
 <span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>subscribers_GOP_summary</span>, </span>
 <span>             col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Term"</span>, <span class='st'>"Estimate"</span>, <span class='st'>"Standard Error"</span>, <span class='st'>"Statistic"</span>, <span class='st'>"P-Value"</span>, </span>
-<span>                           <span class='st'>"CI Lower Bound"</span>, <span class='st'>"CI Upper Bound"</span><span class='op'>)</span>, digits <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span></span></code></pre>
+<span>                           <span class='st'>"CI Lower Bound"</span>, <span class='st'>"CI Upper Bound"</span><span class='op'>)</span>,</span>
+<span>             digits <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span></span></code></pre>
 </div>
 <table style="width:100%;">
 <colgroup>
@@ -1698,7 +1703,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span></span>
 <span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>filtered_data_summary</span>,</span>
 <span>             col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Term"</span>, <span class='st'>"Estimate"</span>, <span class='st'>"Standard Error"</span>, <span class='st'>"Statistic"</span>,</span>
-<span>                           <span class='st'>"P-Value"</span>, <span class='st'>"CI Lower Bound"</span>, <span class='st'>"CI Upper Bound"</span><span class='op'>)</span>, digits <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span></span></code></pre>
+<span>                           <span class='st'>"P-Value"</span>, <span class='st'>"CI Lower Bound"</span>, <span class='st'>"CI Upper Bound"</span><span class='op'>)</span>,</span>
+<span>             digits <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span></span></code></pre>
 </div>
 <table style="width:100%;">
 <colgroup>
@@ -1771,7 +1777,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span></span>
 <span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>black_GOP_summary</span>,</span>
 <span>             col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Term"</span>, <span class='st'>"Estimate"</span>, <span class='st'>"Standard Error"</span>, <span class='st'>"Statistic"</span>,</span>
-<span>                           <span class='st'>"P-Value"</span>, <span class='st'>"CI Lower Bound"</span>, <span class='st'>"CI Upper Bound"</span><span class='op'>)</span>, digits <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span></span></code></pre>
+<span>                           <span class='st'>"P-Value"</span>, <span class='st'>"CI Lower Bound"</span>, <span class='st'>"CI Upper Bound"</span><span class='op'>)</span>,</span>
+<span>             digits <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span></span></code></pre>
 </div>
 <table style="width:100%;">
 <colgroup>
@@ -1843,7 +1850,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span></span>
 <span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>group_means</span>,</span>
 <span>             col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Fox News Indicator"</span>, <span class='st'>"Average 1996 GOP Vote Share"</span>,</span>
-<span>                           <span class='st'>"Average 2000 GOP Vote Share"</span>, <span class='st'>"Change"</span><span class='op'>)</span>, digits <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span></span></code></pre>
+<span>                           <span class='st'>"Average 2000 GOP Vote Share"</span>, <span class='st'>"Change"</span><span class='op'>)</span>,</span>
+<span>             digits <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span></span></code></pre>
 </div>
 <table style="width:100%;">
 <colgroup>
@@ -1888,7 +1896,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>DiD_estimate</span> <span class='op'>&lt;-</span> <span class='va'>group_means</span> <span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>DiD <span class='op'>=</span> <span class='va'>change</span><span class='op'>[</span><span class='va'>fox_indicator</span> <span class='op'>==</span> <span class='fl'>1</span><span class='op'>]</span> <span class='op'>-</span> <span class='va'>change</span><span class='op'>[</span><span class='va'>fox_indicator</span> <span class='op'>==</span> <span class='fl'>0</span><span class='op'>]</span><span class='op'>)</span></span>
 <span></span>
-<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>DiD_estimate</span>, col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Differences-In-Differences Estimate"</span><span class='op'>)</span>, digits <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span></span></code></pre>
+<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>DiD_estimate</span>, col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Differences-In-Differences Estimate"</span><span class='op'>)</span>,</span>
+<span>             digits <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span></span></code></pre>
 </div>
 <table>
 <thead>
