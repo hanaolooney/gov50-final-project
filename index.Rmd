@@ -100,7 +100,9 @@ subscribers_GOP <- lm(gopvoteshare2000_percent ~ subrf2000_percent, data = fox_n
 
 subscribers_GOP_summary <- tidy(subscribers_GOP, conf.int = TRUE)
 
-knitr::kable(subscribers_GOP_summary, col.names = c("Term", "Estimate", "Standard Error", "Statistic", "P-Value", "CI Lower Bound", "CI Upper Bound"), digits = 2)
+knitr::kable(subscribers_GOP_summary, 
+             col.names = c("Term", "Estimate", "Standard Error", "Statistic", "P-Value", 
+                           "CI Lower Bound", "CI Upper Bound"), digits = 2)
 ```
 Running a linear regression between these two variables helps us further understand the line of best fit that was plotted on the graph above. The regression estimates a coefficient of -0.01887663, meaning that for every one percentage point increase in the percentage of subscribers to Fox News in a city, the percentage of votes that went to the Republican Party in 2000 is estimated to have decreased by roughly 0.01887663%. The p-value of 0.02447764 of this regression is less than the conventional alpha level of 0.05, and the 95% confidence interval lies between -0.03532275 and -0.002430499, meaning it does not include zero and the results are statistically significant. 
 
@@ -127,7 +129,9 @@ filtered_data_regression <- lm(gopvoteshare2000_percent ~ subrf2000_percent, dat
 
 filtered_data_summary <- tidy(filtered_data_regression, conf.int = TRUE)
 
-knitr::kable(filtered_data_summary, col.names = c("Term", "Estimate", "Standard Error", "Statistic", "P-Value", "CI Lower Bound", "CI Upper Bound"), digits = 2)
+knitr::kable(filtered_data_summary,
+             col.names = c("Term", "Estimate", "Standard Error", "Statistic",
+                           "P-Value", "CI Lower Bound", "CI Upper Bound"), digits = 2)
 ```
 Before attempting to study the relationship between other demographic variables and electoral outcomes for the Republican Party, however, I was curious as to how the results of this regression would differ if we restricted the data set to only cities that have some access to Fox News. Although the plotted points on the graph would look the same with the exception of the exclusion of points with an x-coordinate value of 0, I still generated another plot in order the visualize the new linear regression line, which, as shown above, is much steeper in the filtered data set compared to the data set that includes cities without Fox News. 
 
@@ -153,7 +157,9 @@ black_GOP_regression <- lm(gopvoteshare2000_percent ~ black1990_percent, data = 
 
 black_GOP_summary <- tidy(black_GOP_regression, conf.int = TRUE)
 
-knitr::kable(black_GOP_summary, col.names = c("Term", "Estimate", "Standard Error", "Statistic", "P-Value", "CI Lower Bound", "CI Upper Bound"), digits = 2)
+knitr::kable(black_GOP_summary,
+             col.names = c("Term", "Estimate", "Standard Error", "Statistic",
+                           "P-Value", "CI Lower Bound", "CI Upper Bound"), digits = 2)
 ```
 
 This new line of analysis shows a clear negative correlation between the share of black residents in a town in 1990 and the share of votes in the 2000 Presidential election that went to Republicans. This is indicated not only by the steep regression line on the graph, but also an estimated coefficient of -0.4546122, indicating that for every 1% increase in the black population share, the GOP vote share in a community decreased by almost half a percent. The p-value is extremely low and the 95% confidence level ranges from -0.4798335 to -0.4293908, which not only excludes zero but also expresses a range that is small in magnitude, indicating that the true effect of an additional 1% increase in black population in a city is almost definitely a decrease between 0.4% and 0.5% in the Republican Party's vote share. 
@@ -183,7 +189,9 @@ group_means <- fox_news |>
 group_means <- group_means |>
   mutate(change = mean_gopvoteshare2000 - mean_gopvoteshare1996)
 
-knitr::kable(group_means, col.names = c("Fox News Indicator", "Average 1996 GOP Vote Share", "Average 2000 GOP Vote Share", "Change"), digits = 2)
+knitr::kable(group_means,
+             col.names = c("Fox News Indicator", "Average 1996 GOP Vote Share",
+                           "Average 2000 GOP Vote Share", "Change"), digits = 2)
 ```
 
 The results above demonstrate that the average share of GOP votes in cities that did not have access to Fox News was 46.79651% in 1996 and 53.92109% in 2000, indicating an increase in 7.124573% in the GOP vote share. For cities that did gain access to Fox News, the average share of GOP votes was 47.90478% in 1996 and 53.73097% in 2000, indicating an increase in 5.826190% in the GOP vote share. 
