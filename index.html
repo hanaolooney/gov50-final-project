@@ -1549,7 +1549,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <p><img src="index_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
 </div>
-<p>The main variable of interest in this study, or the percentage of residents within a city who are subscribed to Fox News can be summarized in the histogram above, which shows that the vast majority of the cities studied did not yet have Fox News introduced. As a result, it is difficult to get an understanding of the distribution of Fox News subscribership in cities where the network was made available, so I filtered the data to exclude when <code>subrf2000</code> was equal to 0 to only display the cities that had access to the network and get a better idea of the media landscape.</p>
+<p>The main variable of interest in this study, or the percentage of residents within a city who are subscribed to Fox News can be summarized in the histogram above, which shows that the vast majority of the cities studied did not yet have Fox News introduced in 2000. As a result, it is difficult to get an understanding of the distribution of Fox News subscribership in cities where the network was made available, so I filtered the data to exclude when <code>subrf2000</code> was equal to 0 to only display the cities that had access to the network and get a better idea of the media landscape.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>filtered_data</span> <span class='op'>&lt;-</span> <span class='va'>fox_news</span> <span class='op'>|&gt;</span> </span>
@@ -1574,19 +1574,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span>    SD <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/sd.html'>sd</a></span><span class='op'>(</span><span class='va'>subrf2000</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
 <span>  <span class='op'>)</span></span>
 <span></span>
-<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>filtered_data_distribution</span><span class='op'>)</span></span></code></pre>
+<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>filtered_data_distribution</span>, col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Mean"</span>, <span class='st'>"Standard Deviation"</span><span class='op'>)</span>, digits <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span></span></code></pre>
 </div>
 <table>
 <thead>
 <tr class="header">
 <th style="text-align: right;">Mean</th>
-<th style="text-align: right;">SD</th>
+<th style="text-align: right;">Standard Deviation</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">0.3598228</td>
-<td style="text-align: right;">0.1611857</td>
+<td style="text-align: right;">0.36</td>
+<td style="text-align: right;">0.161</td>
 </tr>
 </tbody>
 </table>
@@ -1622,53 +1622,53 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span></span>
 <span><span class='va'>subscribers_GOP_summary</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='va'>subscribers_GOP</span>, conf.int <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
 <span></span>
-<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>subscribers_GOP_summary</span><span class='op'>)</span></span></code></pre>
+<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>subscribers_GOP_summary</span>, col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Term"</span>, <span class='st'>"Estimate"</span>, <span class='st'>"Standard Error"</span>, <span class='st'>"Statistic"</span>, <span class='st'>"P-Value"</span>, <span class='st'>"CI Lower Bound"</span>, <span class='st'>"CI Upper Bound"</span><span class='op'>)</span>, digits <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span></span></code></pre>
 </div>
-<table>
+<table style="width:100%;">
 <colgroup>
-<col style="width: 21%" />
-<col style="width: 13%" />
-<col style="width: 12%" />
-<col style="width: 13%" />
-<col style="width: 12%" />
-<col style="width: 13%" />
-<col style="width: 13%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 16%" />
+<col style="width: 11%" />
+<col style="width: 8%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">std.error</th>
-<th style="text-align: right;">statistic</th>
-<th style="text-align: right;">p.value</th>
-<th style="text-align: right;">conf.low</th>
-<th style="text-align: right;">conf.high</th>
+<th style="text-align: left;">Term</th>
+<th style="text-align: right;">Estimate</th>
+<th style="text-align: right;">Standard Error</th>
+<th style="text-align: right;">Statistic</th>
+<th style="text-align: right;">P-Value</th>
+<th style="text-align: right;">CI Lower Bound</th>
+<th style="text-align: right;">CI Upper Bound</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">54.0124672</td>
-<td style="text-align: right;">0.1429767</td>
-<td style="text-align: right;">377.771062</td>
-<td style="text-align: right;">0.0000000</td>
-<td style="text-align: right;">53.7322033</td>
-<td style="text-align: right;">54.2927311</td>
+<td style="text-align: right;">54.01</td>
+<td style="text-align: right;">0.14</td>
+<td style="text-align: right;">377.77</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">53.73</td>
+<td style="text-align: right;">54.29</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">subrf2000_percent</td>
-<td style="text-align: right;">-0.0188766</td>
-<td style="text-align: right;">0.0083900</td>
-<td style="text-align: right;">-2.249896</td>
-<td style="text-align: right;">0.0244776</td>
-<td style="text-align: right;">-0.0353228</td>
-<td style="text-align: right;">-0.0024305</td>
+<td style="text-align: right;">-0.02</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">-2.25</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">-0.04</td>
+<td style="text-align: right;">0.00</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>Running a linear regression between these two variables helps us further understand the line of best fit that was plotted on the graph above. The regression estimates a coefficient of -0.01887663, meaning that for every one percentage point increase in the percentage of subscribers to Fox News in a city, the percentage of votes that went to the Republican Party in 2000 is estimated to have decreased by roughly 0.01887663%. The p-value of 0.02447764 of this regression is less than the conventional alpha level of 0.05, and the 95% confidence interval lies between -0.03532275 and -0.002430499, meaning it does not include zero and the results are statistically significance.</p>
-<p>An important consideration in this regression analysis, however, is practical significance. As shown in the graph above, the regression line is basically flat, and a decrease in Republican Party vote share between 0.002430499% and roughly 0.03532275% for every one percent increase in Fox News viewership is too minuscule to practically signify anything about the relationship between two variables. It is curious that this first graphical analysis does not support my hypothesis, however, and further analysis is needed to see if GOP vote share is better correlated with other demographic characteristics of a community.</p>
+<p>Running a linear regression between these two variables helps us further understand the line of best fit that was plotted on the graph above. The regression estimates a coefficient of -0.01887663, meaning that for every one percentage point increase in the percentage of subscribers to Fox News in a city, the percentage of votes that went to the Republican Party in 2000 is estimated to have decreased by roughly 0.01887663%. The p-value of 0.02447764 of this regression is less than the conventional alpha level of 0.05, and the 95% confidence interval lies between -0.03532275 and -0.002430499, meaning it does not include zero and the results are statistically significant.</p>
+<p>An important consideration in this regression analysis, however, is practical significance. As shown in the graph above, the regression line is basically flat, and a decrease in Republican Party vote share between 0.002430499% and roughly 0.03532275% for every one percent increase in Fox News viewership is too minuscule to signify anything in practical terms about the relationship between two variables. It is curious that this first graphical analysis does not support my hypothesis, however, and further analysis is needed to see if GOP vote share is better correlated with other demographic characteristics of a community.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>filtered_data</span> <span class='op'>&lt;-</span> <span class='va'>filtered_data</span> <span class='op'>|&gt;</span></span>
@@ -1694,47 +1694,47 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span></span>
 <span><span class='va'>filtered_data_summary</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='va'>filtered_data_regression</span>, conf.int <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
 <span></span>
-<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>filtered_data_summary</span><span class='op'>)</span></span></code></pre>
+<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>filtered_data_summary</span>, col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Term"</span>, <span class='st'>"Estimate"</span>, <span class='st'>"Standard Error"</span>, <span class='st'>"Statistic"</span>, <span class='st'>"P-Value"</span>, <span class='st'>"CI Lower Bound"</span>, <span class='st'>"CI Upper Bound"</span><span class='op'>)</span>, digits <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span></span></code></pre>
 </div>
-<table>
+<table style="width:100%;">
 <colgroup>
-<col style="width: 22%" />
-<col style="width: 13%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 16%" />
 <col style="width: 11%" />
-<col style="width: 13%" />
-<col style="width: 13%" />
+<col style="width: 8%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">std.error</th>
-<th style="text-align: right;">statistic</th>
-<th style="text-align: right;">p.value</th>
-<th style="text-align: right;">conf.low</th>
-<th style="text-align: right;">conf.high</th>
+<th style="text-align: left;">Term</th>
+<th style="text-align: right;">Estimate</th>
+<th style="text-align: right;">Standard Error</th>
+<th style="text-align: right;">Statistic</th>
+<th style="text-align: right;">P-Value</th>
+<th style="text-align: right;">CI Lower Bound</th>
+<th style="text-align: right;">CI Upper Bound</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">56.3932939</td>
-<td style="text-align: right;">0.7417283</td>
-<td style="text-align: right;">76.029585</td>
-<td style="text-align: right;">0.00e+00</td>
-<td style="text-align: right;">54.9385700</td>
-<td style="text-align: right;">57.8480178</td>
+<td style="text-align: right;">56.39</td>
+<td style="text-align: right;">0.74</td>
+<td style="text-align: right;">76.03</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">54.94</td>
+<td style="text-align: right;">57.85</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">subrf2000_percent</td>
-<td style="text-align: right;">-0.0739899</td>
-<td style="text-align: right;">0.0188133</td>
-<td style="text-align: right;">-3.932853</td>
-<td style="text-align: right;">8.71e-05</td>
-<td style="text-align: right;">-0.1108877</td>
-<td style="text-align: right;">-0.0370921</td>
+<td style="text-align: right;">-0.07</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">-3.93</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-0.11</td>
+<td style="text-align: right;">-0.04</td>
 </tr>
 </tbody>
 </table>
@@ -1765,55 +1765,55 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span></span>
 <span><span class='va'>black_GOP_summary</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='va'>black_GOP_regression</span>, conf.int <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
 <span></span>
-<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>black_GOP_summary</span><span class='op'>)</span></span></code></pre>
+<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>black_GOP_summary</span>, col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Term"</span>, <span class='st'>"Estimate"</span>, <span class='st'>"Standard Error"</span>, <span class='st'>"Statistic"</span>, <span class='st'>"P-Value"</span>, <span class='st'>"CI Lower Bound"</span>, <span class='st'>"CI Upper Bound"</span><span class='op'>)</span>, digits <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span></span></code></pre>
 </div>
 <table style="width:100%;">
 <colgroup>
-<col style="width: 22%" />
-<col style="width: 13%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
+<col style="width: 20%" />
 <col style="width: 10%" />
-<col style="width: 13%" />
-<col style="width: 13%" />
+<col style="width: 16%" />
+<col style="width: 11%" />
+<col style="width: 8%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">std.error</th>
-<th style="text-align: right;">statistic</th>
-<th style="text-align: right;">p.value</th>
-<th style="text-align: right;">conf.low</th>
-<th style="text-align: right;">conf.high</th>
+<th style="text-align: left;">Term</th>
+<th style="text-align: right;">Estimate</th>
+<th style="text-align: right;">Standard Error</th>
+<th style="text-align: right;">Statistic</th>
+<th style="text-align: right;">P-Value</th>
+<th style="text-align: right;">CI Lower Bound</th>
+<th style="text-align: right;">CI Upper Bound</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">55.3826993</td>
-<td style="text-align: right;">0.1283939</td>
-<td style="text-align: right;">431.34999</td>
+<td style="text-align: right;">55.38</td>
+<td style="text-align: right;">0.13</td>
+<td style="text-align: right;">431.35</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">55.1310219</td>
-<td style="text-align: right;">55.6343768</td>
+<td style="text-align: right;">55.13</td>
+<td style="text-align: right;">55.63</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">black1990_percent</td>
-<td style="text-align: right;">-0.4546122</td>
-<td style="text-align: right;">0.0128667</td>
-<td style="text-align: right;">-35.33235</td>
+<td style="text-align: right;">-0.45</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">-35.33</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">-0.4798335</td>
-<td style="text-align: right;">-0.4293908</td>
+<td style="text-align: right;">-0.48</td>
+<td style="text-align: right;">-0.43</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>This new line of analysis shows a clear negative correlation between the share of black residents in a town in 1990 and the share of votes in the 2000 Presidential election that went to Republicans. This is indicated not only by the steep regression line on the graph, but also an estimated coefficient of -0.4546122, indicating that for every 1% increase in the black population share, the GOP vote share in a community decreased by almost half a percent. The p-value is extremely low and the 95% confidence level ranges from -0.4798335 to -0.4293908, which not only excludes zero but are also values that are close together, indicating that the true effect of an additional 1% increase in black population in a city is almost definetly a decrease between 0.4% and 0.5% in the Republican Party’s vote share.</p>
+<p>This new line of analysis shows a clear negative correlation between the share of black residents in a town in 1990 and the share of votes in the 2000 Presidential election that went to Republicans. This is indicated not only by the steep regression line on the graph, but also an estimated coefficient of -0.4546122, indicating that for every 1% increase in the black population share, the GOP vote share in a community decreased by almost half a percent. The p-value is extremely low and the 95% confidence level ranges from -0.4798335 to -0.4293908, which not only excludes zero but also expresses a range that is small in magnitude, indicating that the true effect of an additional 1% increase in black population in a city is almost definitely a decrease between 0.4% and 0.5% in the Republican Party’s vote share.</p>
 <p>This line of analysis serves to disprove my hypothesis as it proves that there are other variables (namely, race) outside of the share of subscribers to Fox News that have a much stronger claim to influencing a community’s electoral outcomes. An important caveat to all of the analyses thus far is that they are simply correlational analyses and therefore cannot establish any form of causal significance, regardless of their statistical or practical significance.</p>
 <h2 id="results-of-differences-in-differences-analysis">Results of Differences-in-Differences Analysis</h2>
-<p>Rather than just do the cross-sectional research design above, the inability to establish any conclusive connection between Fox News subscribership and electoral outcomes led me to want to take advantage of the nature of this data set in order to conduct a differences-in-differences research design. Because we know that Fox News was not introduced as a cable news network until October 1996 when it was announced by Ruport Murdoch, we can exploit the timing of the entry of this competing news source by comparing electoral outcomes before and after 1996 between cities that did and did not have access to Fox News. By the November 1996 elections, Fox News had only been launched in a few markets, and, even in those markets, just one month before the elections. By the November 2000 elections, Fox News had an audience that was somewhat comparable to that of CNN, its main competitor at the time. Therefore, the 1996 elections can be interpreted as having been unimpacted by Fox News, and the 2000 elections can be interpreted as having had the treatment effect of Fox News applied for those cities in which it was made available.</p>
+<p>Rather than just do the cross-sectional research design above, the inability to establish any conclusive connection between Fox News subscribership and electoral outcomes led me to want to take advantage of the nature of this data set in order to conduct a differences-in-differences research design. Because we know that Fox News was not introduced as a cable news network until October 1996 when the creation of the network was announced by Ruport Murdoch, we can exploit the timing of the entry of this competing news source by comparing electoral outcomes before and after 1996 between cities that did and did not have access to Fox News. By the November 1996 elections, Fox News had only been launched in a few markets, and, even in those markets, just one month before the elections. By the November 2000 elections, Fox News had an audience that was somewhat comparable to that of CNN, its main competitor at the time. Therefore, the 1996 elections can be interpreted as having been unimpacted by Fox News, and the 2000 elections can be interpreted as having had the treatment effect of Fox News applied for those cities in which it was made available.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>fox_news</span> <span class='op'>&lt;-</span> <span class='va'>fox_news</span> <span class='op'>|&gt;</span></span>
@@ -1835,35 +1835,41 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span><span class='va'>group_means</span> <span class='op'>&lt;-</span> <span class='va'>group_means</span> <span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>change <span class='op'>=</span> <span class='va'>mean_gopvoteshare2000</span> <span class='op'>-</span> <span class='va'>mean_gopvoteshare1996</span><span class='op'>)</span></span>
 <span></span>
-<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>group_means</span><span class='op'>)</span></span></code></pre>
+<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>group_means</span>, col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Fox News Indicator"</span>, <span class='st'>"Average 1996 GOP Vote Share"</span>, <span class='st'>"Average 2000 GOP Vote Share"</span>, <span class='st'>"Change"</span><span class='op'>)</span>, digits <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span></span></code></pre>
 </div>
-<table>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 34%" />
+<col style="width: 34%" />
+<col style="width: 8%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: right;">fox_indicator</th>
-<th style="text-align: right;">mean_gopvoteshare1996</th>
-<th style="text-align: right;">mean_gopvoteshare2000</th>
-<th style="text-align: right;">change</th>
+<th style="text-align: right;">Fox News Indicator</th>
+<th style="text-align: right;">Average 1996 GOP Vote Share</th>
+<th style="text-align: right;">Average 2000 GOP Vote Share</th>
+<th style="text-align: right;">Change</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">46.79651</td>
-<td style="text-align: right;">53.92109</td>
-<td style="text-align: right;">7.124573</td>
+<td style="text-align: right;">46.80</td>
+<td style="text-align: right;">53.92</td>
+<td style="text-align: right;">7.12</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">47.90478</td>
-<td style="text-align: right;">53.73097</td>
-<td style="text-align: right;">5.826190</td>
+<td style="text-align: right;">47.90</td>
+<td style="text-align: right;">53.73</td>
+<td style="text-align: right;">5.83</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">NA</td>
-<td style="text-align: right;">50.27083</td>
-<td style="text-align: right;">56.04455</td>
-<td style="text-align: right;">5.773717</td>
+<td style="text-align: right;">50.27</td>
+<td style="text-align: right;">56.04</td>
+<td style="text-align: right;">5.77</td>
 </tr>
 </tbody>
 </table>
@@ -1874,17 +1880,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>DiD_estimate</span> <span class='op'>&lt;-</span> <span class='va'>group_means</span> <span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>DiD <span class='op'>=</span> <span class='va'>change</span><span class='op'>[</span><span class='va'>fox_indicator</span> <span class='op'>==</span> <span class='fl'>1</span><span class='op'>]</span> <span class='op'>-</span> <span class='va'>change</span><span class='op'>[</span><span class='va'>fox_indicator</span> <span class='op'>==</span> <span class='fl'>0</span><span class='op'>]</span><span class='op'>)</span></span>
 <span></span>
-<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>DiD_estimate</span><span class='op'>)</span></span></code></pre>
+<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>DiD_estimate</span>, col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Differences-In-Differences Estimate"</span><span class='op'>)</span>, digits <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span></span></code></pre>
 </div>
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: right;">DiD</th>
+<th style="text-align: right;">Differences-In-Differences Estimate</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">-1.298383</td>
+<td style="text-align: right;">-1.3</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">NA</td>
@@ -1892,11 +1898,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </tbody>
 </table>
 </div>
-<p>Finding the differences-in-differences mean results in a treatment effect of -1.298383, indicating that cities that gained access to Fox News had, on average, a 1.298383% decrease in their share of GOP votes in the 2000 Presidential election compared to the 1996 Presidential election. For this treatment effect to be true, however, the parallel trends assumption must hold: that is, in the absence of treatment, the difference between the ‘treatment’ and ‘control’ group would have remained constant over time. Unfortunately, there is no way to validate this assumption, as we only have limited demographic data from 1990 and not post-treatment to compare between the treatment and non-treatment groups to ensure the groups are otherwise identical and this discrepancy in GOP vote share can be attributed to the introduction of Fox News. Regardless, the practical implications of a 1.298383% decrease in GOP vote share in cities with access to Fox News is quite small, so there is not much we can conclude from this analysis.</p>
+<p>Finding the differences-in-differences mean results in a treatment effect of -1.298383, indicating that cities that gained access to Fox News had, on average, a 1.298383% decrease in their share of GOP votes in the 2000 Presidential election compared to the 1996 Presidential election. For this treatment effect to be true, however, the parallel trends assumption must hold: that is, in the absence of treatment, the difference between the ‘treatment’ and ‘control’ group would have remained constant over time. Unfortunately, there is no way to validate this assumption, as we only have limited demographic data from 1990 pre-treatment and no demographic data post-treatment to compare between the treatment and non-treatment groups to ensure the groups are otherwise identical and this discrepancy in GOP vote share can be attributed to the introduction of Fox News. Regardless, the practical implications of a 1.298383% decrease in GOP vote share in cities with access to Fox News is quite small, so there is not much we can conclude from this analysis.</p>
 <h2 id="conclusion">Conclusion</h2>
-<p>In this project, I conducted a cross-sectional research design analyzing the correlation between the percentage of Fox News subscribers in a city and their GOP vote share in the 2000 Presidential election, which resulted in an extremely small negative correlation between the two variables at a singular point in time, although this correlation was too minuscule to be considered practically significant and also could not establish causality due to the lack of temporal sequencing and the possibility of confounding variables. One such confounding variable that I analyzed was race, which, when analyzed through the lens of the share of black population in a city in 1990, ended up having a much stronger negative correlation with the share of GOP votes in a city compared to the share of Fox news subscribers.</p>
-<p>I also conducted a differences-in-differences research design, analyzing the differences in GOP vote share before and after the introduction of Fox News in the treatment group -cities that had some introduction of Fox News- versus the control group -cities that had no introduction of Fox News as indicated by a 0% subscriber rate. This analysis resulted in a small inverse relationship from my hypothesis, demonstrating that cities that were introduced to Fox News had roughly a 1% decrease in GOP vote share, however, as we cannot establish the parallel trends assumption necessary to prove a differences-in-differences treatment effect, this small treatment effect cannot be proven.</p>
-<p>As such, my hypothesis that greater exposure to Fox News in a city would result in higher GOP voter share was not proven by either the cross-sectional or differences-in-differences research designs. With more time and money, I would strengthen the differences-in-differences research design by testing if the parallel trends assumption holds. This would be done by studying possible confounding variables -for example race, economic conditions, social media usage, or exposure to other television content- and seeing if their levels changed between 1996 and 2000. Though these characteristics do not have to be the same in both the treatment and control groups, their levels should change in tandem with one another in order to be able to conclusively isolate the introduction of Fox News as the causal effect for the change in the dependent varaible</p>
+<p>In this project, I conducted a cross-sectional research design analyzing the correlation between the percentage of Fox News subscribers in a city and their GOP vote share in the 2000 Presidential election, which resulted in an extremely small negative correlation between the two variables at a singular point in time, although this correlation was too minuscule to be considered practically significant and also could not establish causality due to the lack of temporal sequencing and the possibility of confounding variables. One such confounding variable that I analyzed was race, which, when analyzed through the lens of the share of black population in a city in 1990, ended up having a much stronger negative correlation with the share of GOP votes in a city compared to the share of Fox News subscribers.</p>
+<p>I also conducted a differences-in-differences research design, analyzing the differences in GOP vote share before and after the introduction of Fox News in the treatment group -cities that had some introduction of Fox News- versus the control group -cities that had no introduction of Fox News as indicated by a 0% subscriber rate. This analysis resulted in a small inverse relationship from what I predicted in my hypothesis, demonstrating that cities that were introduced to Fox News had roughly a 1% decrease in GOP vote share, however, as we cannot establish the parallel trends assumption necessary to prove a differences-in-differences treatment effect, this small treatment effect cannot be proven.</p>
+<p>As such, my hypothesis that greater exposure to Fox News in a city would result in higher GOP voter share in the 2000 Presidential electionswas not proven by either the cross-sectional or differences-in-differences research designs. With more time and money, I would strengthen the differences-in-differences research design by testing if the parallel trends assumption holds. This would be done by studying possible confounding variables -for example race, economic conditions, social media usage, or exposure to other television content- and seeing if their levels changed between 1996 and 2000. Though these characteristics do not have to be the same in both the treatment and control groups, their levels should change in tandem with one another in order to be able to conclusively isolate the introduction of Fox News as the causal effect for the change in the dependent variable.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
