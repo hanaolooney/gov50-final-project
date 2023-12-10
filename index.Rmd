@@ -33,13 +33,15 @@ This hypothesis would be proven through this analysis by a high correlation betw
 I also decided to expand the scope of this project further and do a differences-in-differences analysis, comparing the GOP vote share in cities that had access to Fox News and those that did not in the 1996 Presidential election, before Fox News took hold, to the 2000 Presidential election. In order for this analysis to be validated, the parallel trends assumption must hold, meaning that the difference between the 'treatment' and 'control' group would have been constant over time in the absence of treatment. This is usually done through comparing key variables before and after a policy change, but because we only have access to limited demographic data from 1990 in this data set, this assumption cannot be validated. Regardless, if the Differences-in-Differences estimate proves to be substantial, this would serve as reasonable basis for an indication that my hypothesis is correct and that further investigation is warranted. 
  
 ```{r}
-ggplot(data = fox_news,
+subrf2000_histogram <- ggplot(data = fox_news,
        mapping = aes(x = subrf2000)) +
   geom_histogram() + labs(
     x = "Percentage of Residents Who Are Subscribed to Fox News",
     y = "Count",
     title = "Distribution of the Percentage of Residents Who Are Subscribed to Fox News"
   )
+
+subrf2000_histogram
 ```
 The main variable of interest in this study, or the percentage of residents within a city who are subscribed to Fox News can be summarized in the histogram above, which shows that the vast majority of the cities studied did not yet have Fox News introduced. As a result, it is difficult to get an understanding of the distribution of Fox News subscribership in cities where the network was made available, so I filtered the data to exclude when `subrf2000` was equal to 0 to only display the cities that had access to the network and get a better idea of the media landscape. 
 
@@ -47,12 +49,14 @@ The main variable of interest in this study, or the percentage of residents with
 filtered_data <- fox_news |> 
   filter(subrf2000 != 0)
 
-ggplot(filtered_data, aes(x = subrf2000)) +
+subrf2000_histogram_filtered <- ggplot(filtered_data, aes(x = subrf2000)) +
   geom_histogram() + labs(
     x = "Percentage of Residents Who Are Subscribed to Fox News",
     y = "Count",
-    title = "Distribution of the Percentage of Residents Who Are Subscribed to Fox News\n Excluding Zero"
+    title = "Distribution of the Percentage of Residents Who Are \nSubscribed to Fox News Excluding Zero"
   )
+
+subrf2000_histogram_filtered
 ```
 ```{r}
 filtered_data_distribution <- filtered_data |>
